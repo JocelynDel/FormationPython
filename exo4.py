@@ -13,3 +13,15 @@ Exemples de valeurs saisies par l'utilisateur:
 => Somme des valeurs saisies: 20 (15,2,3)
 '''
 print("*** EXO 4: somme de saisies ***")
+
+list = []
+sum = 0
+number = int(input("Choisir un nombre, 0 arette le programme: "))
+while int(number) != 0:
+    list.append(number)
+    sum = sum + number
+    number = int(input("Choisir un nombre, 0 arette le programme: "))
+if int(number) == 0:
+    print("Somme des valeurs saisies:", sum, list)
+    
+    
