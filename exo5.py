@@ -11,3 +11,21 @@ ex:
 Le fichier missing.png devra être ignoré
 '''
 print("*** EXO 5: flags => flagsBis ***")
+import os, shutil
+
+targetDir = "flagBis/"
+os.makedirs(targetDir, exist_ok=True)
+
+countFolder = './flags'
+filesNames = os.listdir(countFolder)
+filesNumber = len(filesNames)
+for x in filesNames:
+  if x != 'missing.png':
+    nameMaj = x.upper()
+    newName = nameMaj[:2]
+    originalPath = './flags/%s' % x
+    targetPath = './flagBis/%s' % newName
+    shutil.copyfile(
+      originalPath,
+      targetPath
+    )
