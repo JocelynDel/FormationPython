@@ -24,7 +24,7 @@ for x in f:
     rows.append(x)
 f.close
 
-period = int(input("Temps entre chaque requete: "))
+period = int(input("Time between each status check (seconds): "))
 while True:
     time.sleep(period)
     f = open("./logFiles.txt", "a")
@@ -33,10 +33,10 @@ while True:
             response = req.get(y.strip())
             status = response.status_code
             now = datetime.datetime.now()
-            f.write(" %s status du site %s: %s \n"  % (now,y,status))
+            f.write(" %s Status of %s is %s \n"  % (now,y,status))
         except:
             z = y.strip()
-            f.write("Url invalide: %s \n" % z)
-    print("Status checked, appuyer crtl+c pour aretter")
+            f.write("Url invalid: %s \n" % z)
+    print("Status checked, press crtl+c to stop")
     f.close
 
